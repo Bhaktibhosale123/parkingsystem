@@ -6,7 +6,7 @@ import java.awt.Color;
 import java.awt.event.*;
 
 public class employeeinfo extends JFrame implements ActionListener{
-	
+	// setBounds
 	JTable t1;
 	JButton b1,b2;
 	
