@@ -1,20 +1,53 @@
 package frameexit;
 import javax.swing.*;
+
 import java.sql.*;
 
 import java.awt.Color;
 import java.awt.event.*;
+import net.proteanit.sql.*;
+import java.awt.*;
 
 public class employeeinfo extends JFrame implements ActionListener{
 	// setBounds
 	JTable t1;
 	JButton b1,b2;
+	JLabel j1,j2,j3,j4,j5,j6,j7;
 	
 	employeeinfo(){
 		
 		t1=new JTable();
-		t1.setBounds(0,40,1000,450);
+		t1.setBounds(0,40,1100,450);
 		add(t1);
+		
+		j1=new JLabel("Name");
+		j1.setBounds(65,10,70,30);
+		add(j1);
+		
+		j2=new JLabel("Age");
+		j2.setBounds(225,10,70,30);
+		add(j2);
+		
+		j3=new JLabel("Gender");
+		j3.setBounds(370,10,70,30);
+		add(j3);
+		
+		j4=new JLabel("Job");
+		j4.setBounds(530,10,70,30);
+		add(j4);
+		
+		j5=new JLabel("Phone");
+		j5.setBounds(685,10,70,30);
+		add(j5);
+		
+		j6=new JLabel("Aadhar No");
+		j6.setBounds(835,10,70,30);
+		add(j6);
+		
+		j7=new JLabel("Email Id");
+		j7.setBounds(975,10,70,30);
+		add(j7);
+		
 		
 		b1=new JButton("Load Data");
 		b1.setBackground(Color.BLACK);
@@ -31,8 +64,9 @@ public class employeeinfo extends JFrame implements ActionListener{
 		add(b2);
 		b2.addActionListener(this);
 		
+		getContentPane().setBackground(Color.WHITE);
 		setLayout(null);
-		setBounds(300,200,1000,600);
+		setBounds(200,200,1100,600);
 		setVisible(true);
 		
 	}
@@ -42,8 +76,10 @@ public class employeeinfo extends JFrame implements ActionListener{
 			 
 			 try {
 				 conn c=new conn();
-				 String str="select * from ";
+				 String str="select * from employee_info";
 				 ResultSet rs=c.s.executeQuery(str);
+				 
+				 t1.setModel(DbUtils.resultSetToTableModel(rs));
 			 }catch(Exception e) {
 				 
 			 }

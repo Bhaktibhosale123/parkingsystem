@@ -1,6 +1,7 @@
 package frameexit;
 import java.awt.event.*;
 
+
 import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Font;
@@ -157,6 +158,11 @@ public class exit extends JFrame implements ActionListener {
     		new fare().setVisible(true);
     		this.setVisible(false);
     		
+    		
+    		
+    			
+    	
+    		
     	}else if(ae.getSource()==b3) {
     		System.exit(0);
     	}
@@ -164,6 +170,7 @@ public class exit extends JFrame implements ActionListener {
 	
 	
     }
+	
 	public static void main(String[] args) {
 		new exit();
 

@@ -7,6 +7,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -17,7 +18,7 @@ import javax.swing.JTextField;
 public class fare extends JFrame implements ActionListener {
 	
 	JLabel j1,j2,j3,j4,j5,j6,j7;
-	JTextField t1,t2;
+	JTextField t1,t2,t3;
 	JButton b1,b2;
 	
 	fare(){
@@ -30,6 +31,11 @@ public class fare extends JFrame implements ActionListener {
 		t1=new JTextField();
 		t1.setBounds(200,50,150,30);	
 		add(t1);
+		try {
+			conn c=new conn();
+			ResultSet rs=c.s.executeQuery("select * from parking_time");
+			
+		}catch(Exception e) {}
 		
 		
 		j2=new JLabel("Exit time");
@@ -38,9 +44,9 @@ public class fare extends JFrame implements ActionListener {
 		j2.setFont(new Font("Tahoma",Font.PLAIN,17));
 		add(j2);
 		
-		t1=new JTextField();
-		t1.setBounds(200,105,150,30);	
-		add(t1);
+		t2=new JTextField();
+		t2.setBounds(200,105,150,30);	
+		add(t2);
 		
 		j7=new JLabel("Total time");
 		j7.setSize(150,30);
@@ -48,9 +54,9 @@ public class fare extends JFrame implements ActionListener {
 		j7.setFont(new Font("Tahoma",Font.PLAIN,17));
 		add(j7);
 		
-		t1=new JTextField();
-		t1.setBounds(200,160,150,30);	
-		add(t1);
+		t3=new JTextField();
+		t3.setBounds(200,160,150,30);	
+		add(t3);
 		
 		
 		j3=new JLabel("You have to pay Rs. X");
