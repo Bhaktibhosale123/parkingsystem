@@ -31,11 +31,7 @@ public class fare extends JFrame implements ActionListener {
 		t1=new JTextField();
 		t1.setBounds(200,50,150,30);	
 		add(t1);
-		try {
-			conn c=new conn();
-			ResultSet rs=c.s.executeQuery("select * from parking_time");
-			
-		}catch(Exception e) {}
+		
 		
 		
 		j2=new JLabel("Exit time");
